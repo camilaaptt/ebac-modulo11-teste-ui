@@ -24,4 +24,10 @@ describe('Funcionalidade Página de Produtos', () => {
         cy.get('.woocommerce-message').should('contain' , quantidade , 'Ariel Roll Sleeve Sweatshirt” foi adicionado no seu carrinho.')
 
     })
+
+    it('Deve adicionar produtos ao carrinho - Usando Comandos Customizados', () => {
+        cy.addProdutos('Ariel Roll Sleeve Sweatshirt', 'M', 'Red', 3)
+
+        cy.get('.woocommerce-message').should('contain' , quantidade , 'Ariel Roll Sleeve Sweatshirt” foi adicionado no seu carrinho.') 
+    });
 })
